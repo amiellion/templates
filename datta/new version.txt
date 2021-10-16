@@ -1,0 +1,4 @@
+>package.json
+  - added resolutions //fixes  react-router-dom bug/error
+  
+> removed hoc/_aux
