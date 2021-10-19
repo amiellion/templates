@@ -1,0 +1,87 @@
+{
+  "name": "my-components",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.23.0",
+    "datatables.net-autofill-bs": "^2.0.0",
+    "datatables.net-bs": "^1.10.22",
+    "datatables.net-buttons-bs": "^1.6.5",
+    "datatables.net-colreorder-bs": "^1.5.2",
+    "datatables.net-dt": "^1.10.22",
+    "datatables.net-fixedcolumns-bs": "^3.3.2",
+    "datatables.net-fixedheader-bs": "^3.1.7",
+    "datatables.net-keytable-bs": "^2.5.3",
+    "datatables.net-responsive-bs": "^2.2.6",
+    "datatables.net-rowgroup-bs": "^1.1.2",
+    "datatables.net-rowreorder-bs": "^1.2.7",
+    "datatables.net-scroller-bs": "^2.0.3",
+    "datatables.net-select-bs": "^1.3.1",
+    "datetime-moment": "^1.0.0",
+    "dayjs": "^1.10.7",
+    "font-awesome": "^4.7.0",
+    "fullcalendar-reactwrapper": "^1.0.7",
+    "jquery": "^3.6.0",
+    "mdbreact": "^5.1.0",
+    "moment": "^2.29.1",
+    "pdfmake": "^0.2.2",
+    "pnotify": "^5.2.0",
+    "prop-types": "^15.7.2",
+    "qrcode.react": "^1.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "react-select": "^5.1.0",
+    "redux": "^4.1.1",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/node-logger": "^6.3.12",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.12"
+  }
+}
