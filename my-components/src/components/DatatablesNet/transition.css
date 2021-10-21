@@ -1,16 +1,32 @@
 .collapse-expand-enter {
 	height: 0px;
+    opacity: 0;
 }
 .collapse-expand-enter-active {
-	height: 150px;
-	overflow: hidden;
-	transition: height 500ms ease-in-out;
+	height: 50px;
+    opacity: 1;
+	/* overflow: hidden; */
+	transition: all 800ms ease-in-out;
+}
+.collapse-expand-enter-done {
+	height: 50px;
+    opacity: 1;
+	/* overflow: hidden; */
+	transition: all 800ms ease-in-out;
 }
 .collapse-expand-exit {
-	height: 150px;
+	height: 50px;
+    opacity: 1;
 }
 .collapse-expand-exit-active {
 	height: 0px;
-	overflow: hidden;
-	transition: height 500ms ease-in-out;
+    opacity: 0;
+	/* overflow: hidden; */
+	transition: all 800ms ease-in-out;
+}
+.collapse-expand-exit-done {
+	height: 0px;
+    opacity: 0;
+	/* overflow: hidden; */
+	transition: all 800ms ease-in-out;
 }
