@@ -25,16 +25,12 @@ require('datatables.net-scroller');
 require('datatables.net-select');
 require('datatables.net-fixedcolumns');
 require('datatables.net-fixedheader');
+require('datetime-moment');
 require('jszip');
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 $.DataTable = require('datatables.net-bs');
 
-`
-<button class='m-0 p-2 px-2 btn btn-success btn-rounded btn-review'>REVIEW</button>
-<button class='m-0 p-2 px-2 btn btn-outline-primary btn-rounded btn-print'>PRINT</button>
-<button class='m-0 p-2 px-2 btn btn-outline-info btn-rounded btn-uploadID feather icon-credit-card'></button>
-
-`
+const show = false;
 
 const buttons = {
     add: `<button class='m-0 p-2 px-2 btn btn-rounded btn-success feather icon-plus btn-add'>ADD</button>`,
@@ -43,9 +39,14 @@ const buttons = {
     view: ``,
 }
 
+
+//TODO 
+/*
+    Individual button props, combine into a single button object prop??
+*/
 const TableInitialize = ({
     id,
-    columns,
+    dataColumns,
     endpoint,
     buttonAdd,
     buttonUpdate,
@@ -54,7 +55,8 @@ const TableInitialize = ({
     viewPath,
 
 }) => {
-    const [rnuOnce, setRunOnce] = useState(false);
+    const [runOnce, setRunOnce] = useState(false);
+    const TABLE_ID = `#${id}`;
 
     let tableData = TableFetchData(endpoint);
 
@@ -63,11 +65,12 @@ const TableInitialize = ({
         let tableColumns = [];
         let externalButtons = [];
         let defaultContent = `
+            ${buttonView && buttons.delete}
             ${buttonUpdate && buttons.update}
             ${buttonDelete && buttons.delete}
         `;
 
-        tableColumns = columns.map(columnName => {
+        tableColumns = dataColumns?.map(columnName => {
             if (columnName === 'name') {
                 return {
                     data: columnName, render: function (data, type, row) {
@@ -108,7 +111,7 @@ const TableInitialize = ({
         if (tableData.data) {
             $.fn.dataTable.ext.errMode = "throw";
 
-            $(`#${id}`).DataTable({
+            $(TABLE_ID).DataTable({
                 data: tableData.data,
                 dom: domInit,
                 responsive: true,
@@ -128,7 +131,11 @@ const TableInitialize = ({
         }
     }, [tableData])
 
-    return null;
+    return show&&(
+        <>
+        <h1>{id}</h1>
+        </>
+    );
 }
 
 

@@ -1,6 +1,7 @@
 import $ from "jquery";
-import { useDispatch } from "react-redux";
-import React, { useState, useEffect } from "react";
+// import { useDispatch } from "react-redux";
+import PropTypes from 'prop-types';
+import React, { useState, useEffect, useContext } from "react";
 
 function TableListener({
     tableID,
@@ -8,7 +9,7 @@ function TableListener({
     mode,
     ...props
 }) {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [currID, setID] = useState(0)
     const TABLE_ID = `#${tableID}`;
     useEffect(() => {
@@ -25,8 +26,8 @@ function TableListener({
                     }
                     data = table.row(selected_row).data();
                 }
-                setID(data);
-                dispatch(props.props.dispatchAction())                   //execute redux action
+                // setID(data);
+                // dispatch(props.props.dispatchAction())                   //execute redux action
             });
 
         });
@@ -36,15 +37,19 @@ function TableListener({
     }, [])
 
     return (
-        props.children && (
+        props.children ? (
             < span >
-                {React.cloneElement(props.children, { apis: apiss, data: currID, form: props.props.form })}
+                {/* {React.cloneElement(props.children, { apis: apiss, data: currID, form: props.props.form })} */}
             </span >
-        )
+        ) : null
 
     )
 
 }
 
 export default TableListener;
-TableListener.propTypes
+TableListener.propTypes={
+    tableID: PropTypes.string,
+    reloadAPI: PropTypes.string,
+    mode: PropTypes.string,
+}

@@ -6,13 +6,13 @@
 	height: 50px;
     opacity: 1;
 	/* overflow: hidden; */
-	transition: all 800ms ease-in-out;
+	transition: all 600ms ease-in-out;
 }
 .collapse-expand-enter-done {
 	height: 50px;
     opacity: 1;
 	/* overflow: hidden; */
-	transition: all 800ms ease-in-out;
+	transition: all 600ms ease-in-out;
 }
 .collapse-expand-exit {
 	height: 50px;
@@ -22,11 +22,11 @@
 	height: 0px;
     opacity: 0;
 	/* overflow: hidden; */
-	transition: all 800ms ease-in-out;
+	transition: all 600ms ease-in-out;
 }
 .collapse-expand-exit-done {
 	height: 0px;
     opacity: 0;
 	/* overflow: hidden; */
-	transition: all 800ms ease-in-out;
+	transition: all 600ms ease-in-out;
 }

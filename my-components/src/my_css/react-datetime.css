@@ -1,0 +1,22 @@
+
+/* React Datetime */
+.rdtPicker{
+  box-shadow: 0px 5px 10px rgba(42, 42, 42, 0.651);
+}
+
+.rdtPicker, .rdtActive, .rdtHover{
+  border-radius: 7px;
+}
+.rdtDay{
+  font-size:14px;
+  font-weight:300;
+  color: #A9A9A9;
+  /* padding: 10px; */
+}
+.rdtSwitch, .dow, .rdtNext, .rdtPrev{
+  color: #888888;
+  font-size: 16px;
+}
+.rdtDisabled{
+  color: #f0ebeb !important;
+}

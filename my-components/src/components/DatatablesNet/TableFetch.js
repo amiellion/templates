@@ -1,35 +1,35 @@
 import axios from 'axios'
-import {useEffect,useState} from 'react'
-import {trackPromise} from 'react-promise-tracker'
+import { useEffect, useState } from 'react'
+import { trackPromise } from 'react-promise-tracker'
 
 const TableFetchData = (url, dataProps) => {
-    const [request, setRequest]=useState({
-        loading:false,
-        data:null,
-        error:false
+    const [request, setRequest] = useState({
+        loading: false,
+        data: null,
+        error: false
     });
-    useEffect(()=>{
+    useEffect(() => {
         setRequest({
-            loading:true,
-            data:null,
-            error:false
+            loading: true,
+            data: null,
+            error: false
         });
-        trackPromise(axios.get(url,{ params:dataProps })
+        trackPromise(axios.get(url, { params: dataProps })
             .then(response => {
                 setRequest({
-                    loading:true,
-                    data:(response.data.data)?response.data.data:response.data,
-                    error:false
+                    loading: true,
+                    data: (response.data.data) ? response.data.data : response.data,
+                    error: false
                 });
             })
-            .catch(()=>{
+            .catch(() => {
                 setRequest({
-                    loading:false,
-                    data:null,
-                    error:true
+                    loading: false,
+                    data: null,
+                    error: true
                 })
-            }),'initial')
-    }, [url])
+            }), 'initial')
+    }, [url, dataProps])
 
     return request
 }

@@ -1,7 +1,7 @@
 import { Table } from 'react-bootstrap';
-import React, { useState, useRef } from 'react-bootstrap';
+import React from 'react-bootstrap';
 
-import TableLoader from './TableLoader';
+import TableLoader from './loader/TableLoader';
 import PropTypes from 'prop-types';
 
 
@@ -10,8 +10,8 @@ const TableDisplay = ({
     id
 }) => {
 
-    let finalColumns = columns.map((columns, index) => {
-        columns.push(<th key={`${columns}-index`}>{columns}</th>)
+    let finalColumns = columns?.map((columns, index) => {
+        columns.push(<th key={`${columns}-${index}`}>{columns}</th>)
     })
 
     return (
@@ -20,8 +20,8 @@ const TableDisplay = ({
                 <tr>
                     {finalColumns}
                 </tr>
-                <TableLoader area="initial" colSpan={columns.length} />
-                <TableLoader area="initial" colSpan={columns.length} />
+                <TableLoader area="initial" colSpan={columns?.length} />
+                <TableLoader area={id} colSpan={columns?.length} />
             </thead>
         </Table>
     )

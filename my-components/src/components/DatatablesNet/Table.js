@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import TableDisplay from './TableDisplay';
 import TableInitialize from './TableInitialize';
 import TableListener from './TableListener';
 import TableRspnsvCalc from './TableRspnsvCalc';
+import './transition.css';
+
+// export const TableContext = createContext(null);
 
 
 const Table = ({
@@ -14,15 +17,45 @@ const Table = ({
     buttonAdd,
     buttonDelete,
     buttonUpdate,
+    buttonView,
+    viewPath,
     selectUpdate,
 }) => {
+
+    // const [state] = useState({
+    //     id,
+    //     displayColumns,
+    //     dataColumns,
+    //     endpoint,
+    //     buttonAdd,
+    //     buttonDelete,
+    //     buttonUpdate,
+    //     selectUpdate,
+    // })
+
     return (
+        // <TableContext.Provider
+        //     value={state}
+        // >
         <>
-            <TableDisplay />
-            <TableInitialize />
+            <TableDisplay
+                columns={displayColumns}
+                id={id}
+            />
+            <TableInitialize
+                id={id}
+                buttonAdd={buttonAdd}
+                buttonDelete={buttonAdd}
+                buttonUpdate={buttonUpdate}
+                buttonView={buttonView}
+                viewPath={viewPath}
+                dataColumns={dataColumns}
+                endpoint={endpoint}
+            />
             <TableListener />
             <TableRspnsvCalc />
         </>
+        // </TableContext.Provider>
     )
 }
 

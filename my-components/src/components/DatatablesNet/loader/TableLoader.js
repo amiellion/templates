@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { usePromiseTracker } from "react-promise-tracker";
 // eslint-disable-next-line 
@@ -10,11 +10,24 @@ const Loader = ({ colSpan, area }) => {
     const { promiseInProgress } = usePromiseTracker({ area });
     const [showLoader, setShowLoader] = useState(true);
 
-    return promiseInProgress && (
+    useEffect(() => {
+        let timer
+        if (promiseInProgress) {
+            setShowLoader(() => promiseInProgress)
+        } else {
+            timer = setTimeout(() => {
+                setShowLoader(() => promiseInProgress)
+            }, 3500);
+        }
+
+        return () => clearTimeout(timer);
+    }, [promiseInProgress])
+
+    return (
         <tr>
             <CSSTransition
                 in={showLoader}
-                timeout={530}
+                timeout={600}
                 classNames="collapse-expand"
                 onEnter={() => setShowLoader(false)}
                 onExited={() => setShowLoader(true)}

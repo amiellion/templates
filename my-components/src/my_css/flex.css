@@ -1,0 +1,22 @@
+/* https://www.youtube.com/watch?v=vQAvjof1oe4 */
+
+/* even columns */
+.even-columns {
+  display: flex;
+}
+.even-columns > * {
+  flex-basis: 100%;
+}
+
+.flex-grid-dashboard {
+  display: flex;
+  /* if not enough room, go to next row  */
+  flex-wrap: wrap;
+}
+
+/* gird-ish */
+.flex-grid-dashboard > * {
+  /*  */
+  flex: 1 1 30em;
+  margin: 0.5%;
+}

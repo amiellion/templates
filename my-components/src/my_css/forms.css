@@ -1,0 +1,113 @@
+.general-forms {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; */
+  padding: 5rem 5%;
+  gap: 1%;
+}
+
+.general-forms > *:not(:last-child) {
+  flex: 1 1 35rem;
+  margin: 1% 0;
+}
+/* .general-forms > :last-child {
+  flex-basis: 100%;
+  margin: 0.1rem 35%;
+} */
+
+.general-forms > button.btn {
+  flex-basis: 100%;
+  margin: 0.1rem 25%;
+}
+
+
+.two-flex {
+  display: flex;
+  flex-basis: 100% !important;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+.two-flex > * {
+  flex: 1 1 20rem;
+  margin: 0.75rem 0;
+}
+
+.three-flex {
+  display: flex;
+  flex-basis: 100% !important;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+.three-flex > * {
+  flex: 1 1 20rem;
+  margin: 1% 0;
+}
+
+#transaction-transaction {
+  flex: 1 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  margin: 0 inherit;
+}
+
+/* Material UI Radio SVG Icon Size */
+.MuiSvgIcon-root {
+  width: 0.70em !important;
+  height: 0.70em !important;
+}
+.MuiRadio-colorSecondary.Mui-checked{
+  color: var(--bs-green) !important;
+}
+#transaction-content {
+  padding: 2px 0 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#add_dateofbirth {
+  flex: 1 1 8rem;
+}
+#add_age {
+  flex: 1 1 8rem;
+}
+.divider {
+  flex-basis: 100% !important;
+  align-self: center;
+  justify-self: center;
+  margin: 5% 15% !important;
+  height: 2px;
+  border-top: 1px solid #ccc;
+}
+
+
+
+
+.single-column-forms {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex !important;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 10% 5%;
+  gap: 1%;
+}
+.single-column-forms > :last-child {
+  flex-basis: 100%;
+  margin: 10% 35%;
+}
+.general-forms > *:not(:last-child) {
+  flex: 1 1 35rem;
+  margin: 1% 0;
+}

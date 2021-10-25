@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -24,8 +25,10 @@
     "datetime-moment": "^1.0.0",
     "dayjs": "^1.10.7",
     "font-awesome": "^4.7.0",
+    "formik": "^2.2.9",
     "fullcalendar-reactwrapper": "^1.0.7",
     "jquery": "^3.6.0",
+    "jszip": "^3.5.0",
     "mdbreact": "^5.1.0",
     "moment": "^2.29.1",
     "pdfmake": "^0.2.2",
@@ -34,6 +37,7 @@
     "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.4",
+    "react-datetime": "^3.1.1",
     "react-dom": "^17.0.2",
     "react-promise-tracker": "^2.1.0",
     "react-redux": "^7.2.5",
@@ -42,7 +46,9 @@
     "react-select": "^5.1.0",
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
-    "web-vitals": "^1.0.1"
+    "storybook-formik": "^2.1.8",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -87,5 +93,8 @@
     "@storybook/node-logger": "^6.3.12",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.12"
+  },
+  "resolutions": {
+    "babel-loader": "8.1.0"
   }
 }
